@@ -5,14 +5,17 @@ import CurrencyDisplay from './components/CurrencyDisplay'
 
 class App extends Component {
   render() {
-    return (
-      <>
-        <h2>Render props</h2>
-        <CurrencyConverter/>
-        <CurrencyDisplay/>
-      </>
-    );
+      return (
+        <>
+          <h2>Render Props</h2>
+          <CurrencyConverter
+            render={(currencyData, amount) => (
+              <CurrencyDisplay currencyData={currencyData} amount={amount} />
+            )}
+          />
+        </>
+      )
+    }
   }
-}
 
 export default App;
